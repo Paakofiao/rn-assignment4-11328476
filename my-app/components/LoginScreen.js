@@ -10,6 +10,8 @@ export default function LoginScreen({navigation}) {
 
         const handleLogin = () => {
             navigation.navigate('Home', {name, email});
+            setName('');
+            setEmail('');
         };
     
   return (
