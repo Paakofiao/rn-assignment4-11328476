@@ -36,9 +36,22 @@ export default function LoginScreen({navigation}) {
         value={email}
         onChangeText={setEmail}
         placeholderTextColor="#000"/>
-      <Button title='Sign Up'
+      <Button title='Sign In'
       onPress={handleLogin}/>
     </View>  
+    <View style={styles.lineContainer}>
+      <View style={styles.line} />
+      <View style={styles.middleContainer}>
+        <Text style={styles.middleText}>Or continue with</Text>
+      </View>
+      <View style={styles.line} />
+    </View>
+    <View style={styles.logo}>
+      <Icon name='google' size={27}/>
+      <Icon name='facebook' size={27}/>
+      <Icon name='apple' size={27}/>
+    </View>
+    <Text style={{marginTop: 24}}>Don't have an account? <Text style={{color:'blue'}}>Register</Text></Text>
     </View>
     
   );
@@ -80,5 +93,31 @@ const styles = StyleSheet.create({
   text:{
     fontSize: 10,
     marginBottom: 20
+  },
+  lineContainer:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 16,
+
+  },
+  line: {
+    height: 2,
+    backgroundColor: 'black',
+    marginHorizontal: 16,
+    width: 100,
+    backgroundColor: 'gray'
+  },
+  middleContainer: {
+    paddingHorizontal: 3,
+    marginVertical: 12,
+  },
+  middleText:{
+    color: 'gray'
+  },
+  logo:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 200,
+    marginTop: 16,
   },
 });
